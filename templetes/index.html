@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IntelliChat - AI Assistant</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <span class="brand-icon">✦</span>
+            IntelliChat
+        </div>
+
+        <button class="new-chat-btn" id="newChatBtn">
+            ＋ New Chat
+        </button>
+
+        <h4 class="sidebar-heading">CONVERSATION HISTORY</h4>
+
+        <div id="historyList" class="history-list">
+            <p class="empty-history">Your conversations will appear here.</p>
+        </div>
+
+        <div class="sidebar-footer">
+            <div class="avatar">AI</div>
+
+            <div>
+                <strong>AI Workspace</strong>
+                <p>Personal Assistant</p>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- Main Chat Section -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div class="header-title">
+                AI Assistant
+                <span class="online-dot"></span>
+            </div>
+
+            <span class="workspace-label">Your Workspace</span>
+        </header>
+
+
+        <!-- Chat Area -->
+        <section class="chat-area" id="chatArea">
+
+            <div class="welcome-screen" id="welcomeScreen">
+
+                <div class="welcome-icon">✦</div>
+
+                <p class="eyebrow">YOUR INTELLIGENT ASSISTANT</p>
+
+                <h1>
+                    What can I help you
+                    <span>with today?</span>
+                </h1>
+
+                <p class="welcome-description">
+                    Ask a question, explore an idea, or get help with your next task.
+                </p>
+
+                <div class="suggestion-grid">
+
+                    <button class="suggestion-card"
+                        data-prompt="Help me brainstorm a project idea">
+
+                        <span class="suggestion-icon purple">✧</span>
+
+                        <span>
+                            <strong>Brainstorm ideas</strong>
+                            <small>Explore new possibilities</small>
+                        </span>
+
+                    </button>
+
+
+                    <button class="suggestion-card"
+                        data-prompt="Explain artificial intelligence simply">
+
+                        <span class="suggestion-icon blue">⌘</span>
+
+                        <span>
+                            <strong>Learn something</strong>
+                            <small>Understand a topic clearly</small>
+                        </span>
+
+                    </button>
+
+
+                    <button class="suggestion-card"
+                        data-prompt="Help me write a professional email">
+
+                        <span class="suggestion-icon orange">✎</span>
+
+                        <span>
+                            <strong>Write something</strong>
+                            <small>Improve your writing</small>
+                        </span>
+
+                    </button>
+
+
+                    <button class="suggestion-card"
+                        data-prompt="Give me a step-by-step problem-solving plan">
+
+                        <span class="suggestion-icon green">⌁</span>
+
+                        <span>
+                            <strong>Solve a problem</strong>
+                            <small>Find a practical solution</small>
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Messages appear here -->
+            <div id="messages" class="messages"></div>
+
+        </section>
+
+
+        <!-- Message Composer -->
+        <footer class="composer-section">
+
+            <div class="tone-row">
+
+                <span class="tone-label">RESPONSE TONE</span>
+
+                <div class="tone-toggle">
+
+                    <button class="tone-option active"
+                        data-tone="Professional">
+                        Professional
+                    </button>
+
+                    <button class="tone-option"
+                        data-tone="Casual">
+                        Casual
+                    </button>
+
+                    <button class="tone-option"
+                        data-tone="Concise">
+                        Concise
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <form id="chatForm" class="chat-form">
+
+                <textarea
+                    id="messageInput"
+                    placeholder="Message IntelliChat..."
+                    rows="1"
+                    required></textarea>
+
+                <div class="composer-bottom">
+
+                    <span class="input-note">
+                        ✦ AI can make mistakes. Check important information.
+                    </span>
+
+                    <button type="submit" id="sendBtn" class="send-btn">
+                        ↑
+                    </button>
+
+                </div>
+
+            </form>
+
+            <p class="footer-note">
+                Built for thoughtful conversations.
+            </p>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
